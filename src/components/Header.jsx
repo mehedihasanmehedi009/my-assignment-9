@@ -1,6 +1,7 @@
 import React from "react";
 import { GiJumpingDog } from "react-icons/gi";
 import MyLink from "../../../-9/capcha-1/src/component/MyLink/MyLink";
+import { NavLink } from "react-router";
 
 const Header = () => {
   return (
@@ -29,37 +30,51 @@ const Header = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <MyLink to="/">Home</MyLink>
+              <NavLink className="text-[15px] font-bold" to="/">
+                Home
+              </NavLink>
             </li>
             <li>
-              <MyLink to="/services">Services</MyLink>
+              <NavLink className="text-[15px] font-bold" to="/services">
+                Services
+              </NavLink>
             </li>
             <li>
-              <MyLink to="/myprofile">My Profile</MyLink>
+              <NavLink className="text-[15px] font-bold" to="/myprofile">
+                My Profile
+              </NavLink>
             </li>
           </ul>
         </div>
 
-        <GiJumpingDog size={56} className=" animate-pulse    " />
+        <GiJumpingDog size={59} className=" animate-pulse    " />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <MyLink to="/">Home</MyLink>
+            <NavLink className="text-[20px] font-bold" to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <MyLink to="/services">Services</MyLink>
+            <NavLink className="text-[20px] font-bold" to="/services">
+              Services
+            </NavLink>
           </li>
           <li>
-            <MyLink to="/myprofile">My Profile</MyLink>
+            <NavLink className="text-[20px] font-bold" to="/myprofile">
+              My Profile
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end  md:mr-20 ">
-      <button className="btn
-      ">
-            Log In
-      </button>
+        <button
+          className="btn font-bold text-[20px]
+      "
+        >
+          Log In
+        </button>
       </div>
     </div>
   );

@@ -70,5 +70,29 @@
     "description": "Our veterinary health check covers a complete physical exam, vaccination updates, dental cleaning, and nutrition advice. We use modern diagnostic tools to detect early health issues and keep your pet in perfect shape. After every visit, you receive a detailed health report and care recommendations from our expert veterinarians.",
     "image": "https://cdcssl.ibsrv.net/ibimg/smb/1184x764_80/webmgr/0i/k/8/puppy_kitten.jpg.webp?dd9197ba2d4378d2a831a05ed4f1f6fb=",
     "category": "Healthcare"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Puppy Training & Behavior Coaching",
+    "providerName": "GoodDog Academy",
+    "providerEmail": "train@gooddog.com",
+    "price": 45,
+    "rating": 4.8,
+    "slotsAvailable": 6,
+    "description": "Our certified trainers help your puppy learn basic commands, toilet training, leash manners, and social behavior. Training sessions are gentle, reward-based, and customized to your pet’s personality. Perfect for new pet parents who want a well-behaved, happy dog!",
+    "image":"https://i.ibb.co.com/GfXhgMyr/images.jpg",
+    "category": "Training"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Emergency Pet Ambulance Service",
+    "providerName": "PetRescue 24/7",
+    "providerEmail": "help@petrescue.com",
+    "price": 80,
+    "rating": 5.0,
+    "slotsAvailable": 1,
+    "description": "Our 24/7 emergency pet ambulance ensures your pet receives urgent medical care anytime, anywhere. The vehicle is equipped with oxygen, first aid tools, and a professional vet team ready to act fast. One call can save your furry friend’s life.",
+    "image": "https://i.ibb.co.com/0Nr8mZX/premium-photo-1683141107194-61e40e327e2b.jpg",
+    "category": "Emergency"
   }
 ]

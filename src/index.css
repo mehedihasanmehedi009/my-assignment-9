@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+a.active{
+    @apply border border-red-500  rounded-2xl  text-blue-500
+}
