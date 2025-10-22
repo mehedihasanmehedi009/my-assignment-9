@@ -1,0 +1,74 @@
+ [
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Keep your dog cozy and stylish this winter with our custom coat fitting service. We take precise measurements to ensure a perfect fit and use soft, insulated, and waterproof fabrics to protect against cold weather. Choose from a range of colors and materials to match your dog’s personality. Every coat is handmade with love and comfort in mind.",
+    "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/10143602/Poodle-puppy-wearing-a-jacket-in-winter.jpeg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Luxury Cat Grooming",
+    "providerName": "FurryGlow Salon",
+    "providerEmail": "contact@furryglow.com",
+    "price": 40,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Our premium cat grooming service includes gentle bathing, fur brushing, trimming, ear cleaning, and nail care. We use top-quality pet-safe products that leave your cat’s coat shiny and smooth. The environment is calm and designed to make your pet feel safe. Optional add-ons include fragrance spray, anti-shedding treatment, and soft paw massage.",
+    "image": "https://ohsopretty.net/wp-content/uploads/2022/08/IMG_5999-Large.jpeg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Dog Walking & Outdoor Exercise",
+    "providerName": "HappyPaws Team",
+    "providerEmail": "walk@happypaws.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 8,
+    "description": "Our dog walking service is designed to keep your furry friend active and healthy. Each walk includes light exercise, hydration breaks, and plenty of playtime. Our experienced walkers ensure your pet’s safety and send live photo updates during every session. You can choose between daily, weekly, or on-demand walks according to your schedule.",
+    "image": "https://imageserver.petsbest.com/marketing/blog/getting-fit-with-dog.jpg",
+    "category": "Exercise"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Pet Spa & Relaxing Massage",
+    "providerName": "PetHeaven Spa",
+    "providerEmail": "info@petheaven.com",
+    "price": 60,
+    "rating": 5.0,
+    "slotsAvailable": 2,
+    "description": "Give your pet a luxurious spa experience! Our service includes a warm herbal bath, coat conditioning, full-body massage with organic oils, and aromatherapy. It helps reduce anxiety, improve blood circulation, and maintain a shiny, soft coat. Our expert spa handlers provide a calm, peaceful environment your pet will love.",
+    "image": "https://mywellnesswarehouse.com/cdn/shop/files/d31cf75f-6ed1-4945-97fb-0d9284f15d7e.jpg?v=1700372513&width=1400",
+    "category": "Spa"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Healthy Pet Meal Plan",
+    "providerName": "PawChef Kitchen",
+    "providerEmail": "support@pawchef.com",
+    "price": 30,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "A personalized meal plan created by certified pet nutritionists. We prepare fresh, balanced meals with natural ingredients based on your pet’s breed, age, and dietary needs. You can choose weekly or monthly delivery options. All meals are vet-approved, preservative-free, and designed to keep your pet healthy, energetic, and happy.",
+    "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/20-111914%20-%20Article%20Asset_Nutrition_Build%20a%20Better%20Bowl%20Graphic_20200914-FINAL",
+    "category": "Food"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Veterinary Health Check & Vaccination",
+    "providerName": "SafePet Clinic",
+    "providerEmail": "vet@safepet.com",
+    "price": 50,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Our veterinary health check covers a complete physical exam, vaccination updates, dental cleaning, and nutrition advice. We use modern diagnostic tools to detect early health issues and keep your pet in perfect shape. After every visit, you receive a detailed health report and care recommendations from our expert veterinarians.",
+    "image": "https://cdcssl.ibsrv.net/ibimg/smb/1184x764_80/webmgr/0i/k/8/puppy_kitten.jpg.webp?dd9197ba2d4378d2a831a05ed4f1f6fb=",
+    "category": "Healthcare"
+  }
+]
