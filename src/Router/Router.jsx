@@ -8,6 +8,7 @@ import Register from "../Pages/Register";
 import AuthLayout from "../MainLayout/AuthLayout";
 import NotFound from "../Pages/NotFound";
 import Ditels from "../Pages/Ditels";
+import Animalcard from "../Pages/Animalcard";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/Ditelscard/:serviceId",
     element: <Ditels></Ditels>,

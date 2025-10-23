@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 
 const Card = ({ card }) => {
-  const { serviceName, price, rating, image,serviceId} = card;
+  const { serviceName, price, rating, image, serviceId } = card;
 
   return (
     <div className="w-ful mt-8 bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-all  hover:scale-105  ">

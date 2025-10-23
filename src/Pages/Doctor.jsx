@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import Doctorcard from "./Doctorcard";
-const doctor = fetch("Doctor.json").then((res) => res.json());
+const doctor = fetch("/Doctor.json").then((res) => res.json());
 const Doctor = () => {
   const Catagory = use(doctor);
   return (
