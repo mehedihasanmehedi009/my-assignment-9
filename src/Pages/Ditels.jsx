@@ -20,7 +20,7 @@ const Ditels = () => {
         <Header></Header>
       </header>
       <main>
-        <h1 className=" md:text-4xl text-2xl font-bold text-center p-4"> Animol Ditels</h1>
+        <h1 className=" md:text-4xl text-2xl font-bold text-center p-5"> Animol Ditels</h1>
        <div className="p-4">
          <Suspense fallback={<PropagateLoader />}>
             <ServiceCard Data={Data}></ServiceCard>

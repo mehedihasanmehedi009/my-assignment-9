@@ -25,7 +25,7 @@ const Animalcard = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-center text-4xl font-bold p-4">
+      <h1 className="text-center  p-5 text-3xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-pink-500 via-rose-400 to-green-400 bg-clip-text text-transparent drop-shadow-lg">
         Popular Winter Care Services
       </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-5">
