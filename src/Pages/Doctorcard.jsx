@@ -1,12 +1,12 @@
- import React from "react";
+import React from "react";
 
 const Doctorcard = ({ care }) => {
   const { name, email, number, position, image, description } = care;
 
   return (
-    <div className="w-full sm:w-80 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border overflow-hidden">
+    <div className="w-full  bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border overflow-hidden    hover:scale-105 ">
       {/* Doctor Image */}
-      <div className="w-full h-64 bg-gray-100 flex justify-center items-center overflow-hidden">
+      <div className="w-full h-64 bg-gray-100 flex justify-center items-center overflow-hidden ">
         <img
           src={image}
           alt={name}
@@ -23,18 +23,16 @@ const Doctorcard = ({ care }) => {
 
         {/* Contact Info */}
         <div className="mt-4 text-gray-700 text-sm">
-          <p><span className="font-medium">📧</span> {email}</p>
-          <p><span className="font-medium">📞</span> {number}</p>
+          <p>
+            <span className="font-medium">📧</span> {email}
+          </p>
+          <p>
+            <span className="font-medium">📞</span> {number}
+          </p>
         </div>
-
-        {/* Button */}
-        <button className="mt-5 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg transition-all">
-          View Profile
-        </button>
       </div>
     </div>
   );
 };
 
 export default Doctorcard;
-

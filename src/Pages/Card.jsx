@@ -5,9 +5,13 @@ const Card = ({ card }) => {
   const { serviceName, price, rating, image, description, category } = card;
 
   return (
-    <div className="w-ful mt-8 bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-all">
+    <div className="w-ful mt-8 bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-all  hover:scale-105  ">
       {/* Image */}
-      <img src={image} alt={serviceName} className="w-full h-56 object-cover" />
+      <img
+        src={image}
+        alt={serviceName}
+        className="w-full h-56 object-cover transition-all  hover:scale-120 "
+      />
 
       {/* Content */}
       <div className="p-4">

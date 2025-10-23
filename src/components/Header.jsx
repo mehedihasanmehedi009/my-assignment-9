@@ -1,7 +1,7 @@
 import React from "react";
 import { GiJumpingDog } from "react-icons/gi";
 import MyLink from "../../../-9/capcha-1/src/component/MyLink/MyLink";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Header = () => {
   return (
@@ -69,12 +69,13 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end  md:mr-20 ">
-        <button
+        <Link
+          to="/auth/login"
           className="btn font-bold text-[20px]
       "
         >
           Log In
-        </button>
+        </Link>
       </div>
     </div>
   );
