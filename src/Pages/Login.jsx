@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
  
 
 const Login = () => {
@@ -16,8 +18,9 @@ const Login = () => {
             </div>
             <button className="btn btn-neutral mt-4">Login</button>
           </fieldset>
-        </form>
-        <p>Dont Have An Account ? <span></span></p>
+           <Link to="/auth/registar"  className="text-center ">Dont Have An Account ? <span className="text-blue-600 underline cursor-pointer">Registar</span></Link>
+                  </form>
+       
       </div>
     </div>
   );

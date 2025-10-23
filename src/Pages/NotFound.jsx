@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { Link } from "react-router";
 
-const Services = () => {
-    return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-red-500 to-blue-500 text-white text-center">
+const NotFound = () => {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-red-500 to-blue-500 text-white text-center">
       <h1 className="text-9xl font-extrabold">404</h1>
       <p className="text-2xl mt-4">Page Not Found</p>
       <Link
@@ -13,7 +12,7 @@ const Services = () => {
         Go Back Home
       </Link>
     </div>
-    );
+  );
 };
 
-export default Services;
+export default NotFound;
