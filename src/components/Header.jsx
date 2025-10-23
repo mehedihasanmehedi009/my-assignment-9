@@ -1,6 +1,6 @@
 import React from "react";
 import { GiJumpingDog } from "react-icons/gi";
-import MyLink from "../../../-9/capcha-1/src/component/MyLink/MyLink";
+ 
 import { Link, NavLink } from "react-router";
 
 const Header = () => {

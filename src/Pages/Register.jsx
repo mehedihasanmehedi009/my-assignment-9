@@ -2,14 +2,13 @@ import React from 'react';
 
 const Register = () => {
     return (
-        <div>
-             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <div className="card-body">
+         <div className="flex justify-center min-h-screen items-center ">
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+         <h1 className="text-3xl  text-center font-bold"> Login Your account </h1>
+         <div className="card-body">
           <fieldset className="fieldset">
-            <label className="label">Name</label>
+             <label className="label">Name</label>
             <input type="email" className="input" placeholder="Email" />
-            <label className="label">Photo URL</label>
-            <input type="password" className="input" placeholder="Password" />
             <label className="label">Email</label>
             <input type="email" className="input" placeholder="Email" />
             <label className="label">Password</label>
@@ -21,7 +20,7 @@ const Register = () => {
           </fieldset>
         </div>
       </div>
-        </div>
+    </div>
     );
 };
 
