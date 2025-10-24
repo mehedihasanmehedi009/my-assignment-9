@@ -28,8 +28,9 @@ const Card = ({ card }) => {
 
         <p className="text-gray-900 font-semibold mt-2">${price}</p>
 
-        <Link
-          to={`/Ditelscard/${serviceId}`}
+        <Link 
+          
+          to={`/Ditelscard/${serviceId} `}
           className="btn w-full mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-md transition-all"
         >
           View Details

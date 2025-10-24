@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { auth } from "../firebase.config";
 import { toast } from "react-toastify";
@@ -15,7 +15,11 @@ import {
 import { AuthContext } from "../context/AuthContext";
  const Provider = new GoogleAuthProvider()
 const Login = () => {
-  const { setUser, user, signinfun } = useContext(AuthContext);
+  const { setUser,  signinfun } = useContext(AuthContext);
+        const loction = useLocation()
+         const naviget = useNavigate()
+        console.log(loction)
+         
   const [hiden, setHiden] = useState(false);
   const emailRef = useRef(null);
   const hendellogin = (e) => {
@@ -26,7 +30,7 @@ const Login = () => {
     signinfun(email, password)
      .then((res) => {
     console.log(res);
-    setUser(res.user);
+         naviget(loction.state)
     toast.success("Signin success ✅");
   })
   .catch((e) => {
@@ -71,8 +75,7 @@ const Login = () => {
   const hendel = () => {
     setHiden(!hiden);
   };
-  console.log(user);
-  return (
+   return (
     <div className="flex justify-center min-h-screen items-center md:p-0 p-5">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <h1 className="text-3xl  text-center font-bold">

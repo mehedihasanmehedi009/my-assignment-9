@@ -11,10 +11,12 @@ import Ditels from "../Pages/Ditels";
 import Animalcard from "../Pages/Animalcard";
 import { Profiler } from "react";
 import ProfileCard from "../Pages/My Profile";
+import PrivetRout from "../privetCounter/PrivetRout";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+  
     children: [
       { index: true, element: <Home /> },
       {
@@ -44,7 +46,7 @@ export const router = createBrowserRouter([
 
   {
     path: "/Ditelscard/:serviceId",
-    element: <Ditels></Ditels>,
+    element: <PrivetRout><Ditels></Ditels></PrivetRout>,
     loader: () => fetch("/Dog.json"),
   },
   {

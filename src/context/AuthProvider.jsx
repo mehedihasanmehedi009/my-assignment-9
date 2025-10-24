@@ -9,15 +9,15 @@ import {
 import { auth } from "../firebase.config";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  // const [Loading, setLoading] = useState(true);
+  const [Loading, setLoading] = useState(true);
 
   const createuserfun = (email, password) => {
-    //  setLoading(true)
+     setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signinfun = (email, password) => {
-    //  setLoading(true)
+     setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -27,12 +27,15 @@ const AuthProvider = ({ children }) => {
     setUser,
     createuserfun,
     signinfun,
+    Loading,
+     setLoading
    
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
       setUser(CurrentUser);
+      setLoading(false)
     });
     return () => {
       unSubscribe();

@@ -13,7 +13,7 @@ const Ditels = () => {
     const carddata = data.find((singl) => singl.serviceId == serviceId);
     setData(carddata);
   }, [data, serviceId]);
-  console.log(Data);
+ 
   return (
     <div>
       <header>
