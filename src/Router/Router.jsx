@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-  
+   hydrateFallbackElement:<span className="loading loading-spinner text-error"></span>,
     children: [
       { index: true, element: <Home /> },
       {
@@ -32,6 +32,7 @@ export const router = createBrowserRouter([
   {
     path: "/auth",
     element: <AuthLayout></AuthLayout>,
+       hydrateFallbackElement:<span className="loading loading-spinner text-error"></span>,
     children: [
       {
         path: "/auth/login",
