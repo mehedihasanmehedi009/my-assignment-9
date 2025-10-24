@@ -5,13 +5,16 @@ import { IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router";
 import { auth } from "../firebase.config";
 import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
 const Register = () => {
   const [hiden, setHiden] = useState(false);
   const HedelRegister = (e) => {
     e.preventDefault();
+        const displayName = e.target.name.value;
+    const photoURL = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    //   console.log("mehedi",{email,password})
+    //   console.log("mehedi",{email,password ,displayName, photoURL})
     if (password.length < 6) {
       toast.error("password up to 6 digit");
       return;
@@ -29,18 +32,26 @@ const Register = () => {
     if (!/[0-9]/.test(password)) {
       console.error("Error: The string must contain at least one number.");
     }
-    // if (!/[A-Z]/.test(name)) {
-    //   toast.error("at least one uppercase letter");
-    //   return
-    // }
+ 
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
+        updateProfile(res.user,{
+          displayName,
+          photoURL
+        })
+        .then((res)=>
+        console.log(res))
+        .catch((e)=>
+          toast.error(e.massage)
+        )
         console.log(res);
         toast.success("register success");
       })
       .catch((e) => {
-        toast.error(e.message);
+       console.log(e.code)
+       if(e.code == "auth/email-already-in-use")
+        toast.error("Email already exist.....");
       });
   };
   const hendels = () => {
