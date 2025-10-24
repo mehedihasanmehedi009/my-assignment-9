@@ -4,11 +4,9 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  updateProfile,
+ 
 } from "firebase/auth";
 import { auth } from "../firebase.config";
-import { GoogleAuthProvider } from "firebase/auth/web-extension";
-
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   // const [Loading, setLoading] = useState(true);
@@ -23,17 +21,13 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const updateProfilefun = (displayName, photoURL) => {
-    //  setLoading(true)
-    return updateProfile(auth.currentUser, { displayName, photoURL });
-  };
-
+   
   const authdata = {
     user,
     setUser,
     createuserfun,
     signinfun,
-    updateProfilefun,
+   
   };
 
   useEffect(() => {

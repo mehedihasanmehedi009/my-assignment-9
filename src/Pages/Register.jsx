@@ -1,4 +1,3 @@
- 
 import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
@@ -9,14 +8,14 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 const Register = () => {
   const [hiden, setHiden] = useState(false);
-  const{createuserfun}= useContext(AuthContext)
+  const { createuserfun } = useContext(AuthContext);
   const HedelRegister = (e) => {
     e.preventDefault();
-        const displayName = e.target.name.value;
+    const displayName = e.target.name.value;
     const photoURL = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-      console.log("mehedi",{email,password ,displayName, photoURL})
+    console.log("mehedi", { email, password, displayName, photoURL });
     if (password.length < 6) {
       toast.error("password up to 6 digit");
       return;
@@ -33,24 +32,20 @@ const Register = () => {
       console.error("Error: The string must contain at least one number.");
     }
     // createUserWithEmailAndPassword(auth, email, password)
-        createuserfun(email,password)
-       .then(res => {
-    
-        updateProfile(res.user,{
+    createuserfun(email, password)
+      .then((res) => {
+        updateProfile(res.user, {
           displayName,
-          photoURL
+          photoURL,
         })
-        .then((res)=>
-        console.log(res))
-        .catch((e)=>
-          toast.error(e.massage)
-        )
+          .then(() => console.log(res))
+          .catch((e) => toast.error(e.massage));
         toast.success("register success");
       })
       .catch((e) => {
-       console.log(e.code)
-       if(e.code == "auth/email-already-in-use")
-        toast.error("Email already exist.....");
+        console.log(e.code);
+        if (e.code == "auth/email-already-in-use")
+          toast.error("Email already exist.....");
       });
   };
   const hendels = () => {
@@ -95,7 +90,7 @@ const Register = () => {
                 onClick={hendels}
                 className="absolute right-[8px] top-[36px] cursor-pointer z-50"
               >
-                {hiden ? <FaEye size={15} /> : <IoEyeOff  size={15}/>}
+                {hiden ? <FaEye size={15} /> : <IoEyeOff size={15} />}
               </span>
             </div>
             <button className="btn btn-neutral mt-4  bg-gradient-to-r from-red-500 to-blue-500">

@@ -6,12 +6,14 @@ import { FcGoogle } from "react-icons/fc";
 import { auth } from "../firebase.config";
 import { toast } from "react-toastify";
 import {
+ 
   GoogleAuthProvider,
   sendPasswordResetEmail,
   signInWithPopup,
+ 
 } from "firebase/auth";
 import { AuthContext } from "../context/AuthContext";
-const provider = new GoogleAuthProvider();
+ const Provider = new GoogleAuthProvider()
 const Login = () => {
   const { setUser, user, signinfun } = useContext(AuthContext);
   const [hiden, setHiden] = useState(false);
@@ -41,19 +43,19 @@ const Login = () => {
   });
   };
 
-  const hendele = () => {
-    signInWithPopup(auth, provider)
-      .then((res) => {
-        console.log(res);
-        setUser(res.user);
-        toast.success("signin success");
-      })
-      .catch((e) => {
-        console.log(e);
-        toast.error(e.message);
-      });
-  };
+  const hendelegoggle = ()=>{
+   signInWithPopup(auth,Provider)
+   .then((res)=>{
+    console.log(res.user)
+       toast.success("Google sigin success")
+   })
+   .catch((e)=>{
+    toast.error(e.message)
+   })
 
+  }
+
+ 
   const hendelforget = () => {
     const email = emailRef.current.value;
     sendPasswordResetEmail(auth, email)
@@ -115,7 +117,7 @@ const Login = () => {
             </button>
           </fieldset>
           <button
-            onClick={hendele}
+            onClick={hendelegoggle}
             type="button"
             className="btn w-full  bg-white"
           >
