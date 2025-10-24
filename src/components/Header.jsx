@@ -101,7 +101,7 @@ const Header = () => {
               />
               <span className="absolute left-1/2 -translate-x-1/2 mt-2 text-sm font-semibold bg-purple-600 text-white px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
                 {user?.displayName || "User"}
-                {user?.email}
+           
               </span>
             </div>
 
