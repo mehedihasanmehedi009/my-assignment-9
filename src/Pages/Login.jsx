@@ -30,7 +30,8 @@ const Login = () => {
     signinfun(email, password)
      .then((res) => {
     console.log(res);
-         naviget(loction.state)
+    setUser(res.user)
+    naviget(loction.state? loction.state:"/")
     toast.success("Signin success ✅");
   })
   .catch((e) => {

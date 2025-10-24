@@ -23,7 +23,7 @@ const MyProfile = () => {
     <p className='md:text-2xl'>   {user?.email}</p>
     <div className="card-actions">
     <Link to="/" className="my-btn btn font-bold mt-1  mb-3 text-white hover:bg-blue-500 bg-purple-500">
-            Home Page
+            updet Profile
             </Link>
     </div>
   </div>

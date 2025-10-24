@@ -89,7 +89,7 @@ const Header = () => {
 
       {/* Right Section */}
       <div className="navbar-end md:mr-20">
-        {    user ? (
+        {user ? (
           <div className="text-center flex gap-4     items-center space-y-2">
             {/* Profile Image with Hover Name */}
             <div className="relative group cursor-pointer">

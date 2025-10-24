@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 const Register = () => {
   const [hiden, setHiden] = useState(false);
-  const { createuserfun } = useContext(AuthContext);
+  const { createuserfun,setUser } = useContext(AuthContext);
   const HedelRegister = (e) => {
     e.preventDefault();
     const displayName = e.target.name.value;
@@ -30,23 +30,29 @@ const Register = () => {
     }
     if (!/[0-9]/.test(password)) {
       console.error("Error: The string must contain at least one number.");
+      return
     }
-    // createUserWithEmailAndPassword(auth, email, password)
+ 
     createuserfun(email, password)
-      .then((res) => {
-        updateProfile(res.user, {
+  .then((res) => {
+    updateProfile(res.user, { displayName, photoURL })
+      .then(() => {
+        toast.success("Register success!");
+   
+        setUser({
+          ...res.user,
           displayName,
           photoURL,
-        })
-          .then(() => console.log(res))
-          .catch((e) => toast.error(e.massage));
-        toast.success("register success");
+        });
       })
-      .catch((e) => {
-        console.log(e.code);
-        if (e.code == "auth/email-already-in-use")
-          toast.error("Email already exist.....");
-      });
+      .catch((e) => toast.error(e.message));
+  })
+  .catch((e) => {
+    if (e.code === "auth/email-already-in-use") {
+      toast.error("Email already exist.");
+    }
+  });
+
   };
   const hendels = () => {
     setHiden(!hiden);
