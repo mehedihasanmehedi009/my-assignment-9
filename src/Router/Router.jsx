@@ -9,6 +9,8 @@ import AuthLayout from "../MainLayout/AuthLayout";
 import NotFound from "../Pages/NotFound";
 import Ditels from "../Pages/Ditels";
 import Animalcard from "../Pages/Animalcard";
+import { Profiler } from "react";
+import ProfileCard from "../Pages/My Profile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myprofile",
-        element: <MyProfile />,
+        element: <ProfileCard></ProfileCard>,
       },
     ],
   },

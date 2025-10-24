@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router";
@@ -8,12 +8,12 @@ import { toast } from "react-toastify";
 import {
   GoogleAuthProvider,
   sendPasswordResetEmail,
-  signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+import { AuthContext } from "../context/AuthContext";
 const provider = new GoogleAuthProvider();
 const Login = () => {
-  const [user ,setUser] = useState(null)
+  const { setUser, user, signinfun } = useContext(AuthContext);
   const [hiden, setHiden] = useState(false);
   const emailRef = useRef(null);
   const hendellogin = (e) => {
@@ -21,10 +21,31 @@ const Login = () => {
     const email = e.target.email?.value;
     const password = e.target.password?.value;
     console.log({ email, password });
-    signInWithEmailAndPassword(auth, email, password)
+    signinfun(email, password)
+     .then((res) => {
+    console.log(res);
+    setUser(res.user);
+    toast.success("Signin success ✅");
+  })
+  .catch((e) => {
+    console.log(e.code);
+    if (
+      e.code === "auth/invalid-credential" ||
+      e.code === "auth/wrong-password" ||
+      e.code === "auth/user-not-found"
+    ) {
+      toast.error("Your password is invalid ❌");
+    } else {
+      toast.error("Login failed, please try again");
+    }
+  });
+  };
+
+  const hendele = () => {
+    signInWithPopup(auth, provider)
       .then((res) => {
         console.log(res);
-        setUser(res.user)
+        setUser(res.user);
         toast.success("signin success");
       })
       .catch((e) => {
@@ -33,39 +54,22 @@ const Login = () => {
       });
   };
 
-
-  const hendele =()=>{
-    signInWithPopup(auth, provider)
-    .then((res) => {
+  const hendelforget = () => {
+    const email = emailRef.current.value;
+    sendPasswordResetEmail(auth, email)
+      .then((res) => {
         console.log(res);
-        setUser(res.user)
-        toast.success("signin success");
+        toast.success("check Your email to reset password");
       })
       .catch((e) => {
-        console.log(e);
         toast.error(e.message);
       });
-     
-  }
-
-  const hendelforget = () =>{
-    
-    const email = emailRef.current.value
-    sendPasswordResetEmail(auth,email)
-    .then((res)=>{
-      console.log(res)
-      toast.success("check Your email to reset password")
-    })
-    .catch((e)=>{
-      toast.error(e.message)
-    })
-
-  }
+  };
 
   const hendel = () => {
     setHiden(!hiden);
   };
-  console.log(user)
+  console.log(user);
   return (
     <div className="flex justify-center min-h-screen items-center md:p-0 p-5">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -99,13 +103,22 @@ const Login = () => {
               </span>
             </div>
             <div>
-              <a onClick={hendelforget} className="link link-hover">Forgot password?</a>
+              <a onClick={hendelforget} className="link link-hover">
+                Forgot password?
+              </a>
             </div>
-            <button type="submit" className="btn btn-neutral mt-4  bg-gradient-to-r from-red-500 to-blue-500">
+            <button
+              type="submit"
+              className="btn btn-neutral mt-4  bg-gradient-to-r from-red-500 to-blue-500"
+            >
               Login
             </button>
           </fieldset>
-          <button onClick={ hendele} type="button" className="btn w-full  bg-white">
+          <button
+            onClick={hendele}
+            type="button"
+            className="btn w-full  bg-white"
+          >
             <FcGoogle size={25} /> Continue With Google
           </button>
           <Link to="/auth/registar" className="text-center font-bold ">

@@ -1,25 +1,26 @@
-import { createUserWithEmailAndPassword } from "firebase/auth/web-extension";
+ 
 import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router";
-import { auth } from "../firebase.config";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const Register = () => {
   const [hiden, setHiden] = useState(false);
+  const{createuserfun}= useContext(AuthContext)
   const HedelRegister = (e) => {
     e.preventDefault();
         const displayName = e.target.name.value;
     const photoURL = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    //   console.log("mehedi",{email,password ,displayName, photoURL})
+      console.log("mehedi",{email,password ,displayName, photoURL})
     if (password.length < 6) {
       toast.error("password up to 6 digit");
       return;
     }
-
     if (!/[a-z]/.test(password)) {
       toast.error(" at least one lowercase letter.");
       return;
@@ -28,14 +29,13 @@ const Register = () => {
       toast.error("at least one uppercase letter");
       return;
     }
-
     if (!/[0-9]/.test(password)) {
       console.error("Error: The string must contain at least one number.");
     }
- 
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
+    // createUserWithEmailAndPassword(auth, email, password)
+        createuserfun(email,password)
+       .then(res => {
+    
         updateProfile(res.user,{
           displayName,
           photoURL
@@ -45,7 +45,6 @@ const Register = () => {
         .catch((e)=>
           toast.error(e.massage)
         )
-        console.log(res);
         toast.success("register success");
       })
       .catch((e) => {
@@ -100,7 +99,7 @@ const Register = () => {
               </span>
             </div>
             <button className="btn btn-neutral mt-4  bg-gradient-to-r from-red-500 to-blue-500">
-              Login
+              Registar
             </button>
             <Link
               to="/auth/login"
