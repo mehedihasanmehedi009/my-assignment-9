@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 const Header = () => {
   const { user,setUser } = use(AuthContext);
+
     
   const Singout=() =>{
     signOut(auth)
@@ -19,6 +20,7 @@ const Header = () => {
     toast.error(e.massage)
     )
   }
+  console.log(user)
   return (
     <div className="navbar bg-base-100 shadow-sm">
       {/* Left Section */}
@@ -91,8 +93,9 @@ const Header = () => {
           <div className="text-center flex gap-4     items-center space-y-2">
             {/* Profile Image with Hover Name */}
             <div className="relative group cursor-pointer">
+              {/* <img src="https://lh3.googleusercontent.com/a/ACg8ocL-5bM7i3qb16gI7R2HUW0C9vepMUcptvL_kcrermIfaUGlGXU=s96-c" alt="" /> */}
               <img
-                src={user?.photoURL || "https://via.placeholder.com/88"}
+                src={user.photoURL }
                 className="h-12 w-12 rounded-full border-2 border-purple-500 transition-transform duration-300 group-hover:scale-105"
                 alt="User"
               />
